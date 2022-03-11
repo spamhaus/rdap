@@ -279,8 +279,8 @@ func readValue(value interface{}, depth int) (interface{}, error) {
 	switch value := value.(type) {
 	case nil:
 		return nil, nil
-        case map[string]interface{}:
-                return nil, nil // fixes invalid vcard properties values
+	case map[string]interface{}:
+		return nil, nil // fixes invalid vcard properties values
 	case string:
 		return value, nil
 	case bool:
