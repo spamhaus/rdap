@@ -56,6 +56,8 @@ func (d *DNSRegistry) Lookup(question *Question) (*Answer, error) {
 			break
 		} else if fqdn == "" {
 			break
+		} else if urls, ok = findDNSRegistryFallback(fqdn); ok {
+			break
 		}
 
 		index := strings.IndexByte(fqdn, '.')
